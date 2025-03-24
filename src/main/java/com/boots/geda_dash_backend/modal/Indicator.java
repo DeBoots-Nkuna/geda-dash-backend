@@ -85,7 +85,9 @@ public class Indicator {
     private String dashboardUsage;
 
 
-//    additional information fields
+
+
+    //    additional information fields
     @JsonProperty("Links to collected data")
     private String linksToCollectedData;
     @JsonProperty("data communicated in the public space")
@@ -97,12 +99,15 @@ public class Indicator {
     @JsonProperty("Indicator Image")
     @Column(name="indicator_image", columnDefinition = "LONGTEXT")
     private String indicatorImage;
+    @JsonProperty("Methodology")
+    private String methodology;
+
 
     public Indicator() {
 
     }
 
-    public Indicator(int id, String organisationId, String organisationFullName, String organisationContactName, String organisationContactEmail, String organisationWebsite, String indicatorShortName, String indicatorDescription, String countryCountries, String indicatorYearStart, String indicatorFootprint, String indicatorThematicAreas, String indicatorCategory, String typeOfData, String groupsSupportedWithData, String purposeOfData, String targetAudience, String dataReplicability, String preAnalysis, String dataType, String dataAnalysis, String resultValidation, String frequency, String publicSharingConsent, String frequentInformationUpdates, String webscrappingApproval, String dashboardUsage, String linksToCollectedData, String dataCommunicatedInThePublicSpace, String communicationDetails, String moreDetailOnTheMethodology, String indicatorImage) {
+    public Indicator(int id, String organisationId, String organisationFullName, String organisationContactName, String organisationContactEmail, String organisationWebsite, String indicatorShortName, String indicatorDescription, String countryCountries, String indicatorYearStart, String indicatorFootprint, String indicatorThematicAreas, String indicatorCategory, String typeOfData, String groupsSupportedWithData, String purposeOfData, String targetAudience, String dataReplicability, String preAnalysis, String dataType, String dataAnalysis, String resultValidation, String frequency, String publicSharingConsent, String frequentInformationUpdates, String webscrappingApproval, String dashboardUsage, String linksToCollectedData, String dataCommunicatedInThePublicSpace, String communicationDetails, String moreDetailOnTheMethodology, String indicatorImage, String methodology) {
         this.id = id;
         this.organisationId = organisationId;
         this.organisationFullName = organisationFullName;
@@ -135,8 +140,8 @@ public class Indicator {
         this.communicationDetails = communicationDetails;
         this.moreDetailOnTheMethodology = moreDetailOnTheMethodology;
         this.indicatorImage = indicatorImage;
+        this.methodology = methodology;
     }
-
 
     public int getId() {
         return id;
@@ -210,11 +215,11 @@ public class Indicator {
         this.countryCountries = countryCountries;
     }
 
-    public String getIndicatorStartYear() {
+    public String getIndicatorYearStart() {
         return indicatorYearStart;
     }
 
-    public void setIndicatorStartYear(String indicatorYearStart) {
+    public void setIndicatorYearStart(String indicatorYearStart) {
         this.indicatorYearStart = indicatorYearStart;
     }
 
@@ -378,12 +383,12 @@ public class Indicator {
         this.communicationDetails = communicationDetails;
     }
 
-    public String getMoreDetailOnThMethodology() {
+    public String getMoreDetailOnTheMethodology() {
         return moreDetailOnTheMethodology;
     }
 
-    public void setMoreDetailOnThMethodology(String moreDetailOnThMethodology) {
-        this.moreDetailOnTheMethodology = moreDetailOnThMethodology;
+    public void setMoreDetailOnTheMethodology(String moreDetailOnTheMethodology) {
+        this.moreDetailOnTheMethodology = moreDetailOnTheMethodology;
     }
 
     public String getIndicatorImage() {
@@ -392,5 +397,52 @@ public class Indicator {
 
     public void setIndicatorImage(String indicatorImage) {
         this.indicatorImage = indicatorImage;
+    }
+
+    public String getMethodology() {
+        return methodology;
+    }
+
+    public void setMethodology(String methodology) {
+        this.methodology = methodology;
+    }
+
+    @Override
+    public String toString() {
+        return "Indicator{" +
+                "id=" + id +
+                ", organisationId='" + organisationId + '\'' +
+                ", organisationFullName='" + organisationFullName + '\'' +
+                ", organisationContactName='" + organisationContactName + '\'' +
+                ", organisationContactEmail='" + organisationContactEmail + '\'' +
+                ", organisationWebsite='" + organisationWebsite + '\'' +
+                ", indicatorShortName='" + indicatorShortName + '\'' +
+                ", indicatorDescription='" + indicatorDescription + '\'' +
+                ", countryCountries='" + countryCountries + '\'' +
+                ", indicatorYearStart='" + indicatorYearStart + '\'' +
+                ", indicatorFootprint='" + indicatorFootprint + '\'' +
+                ", indicatorThematicAreas='" + indicatorThematicAreas + '\'' +
+                ", indicatorCategory='" + indicatorCategory + '\'' +
+                ", typeOfData='" + typeOfData + '\'' +
+                ", groupsSupportedWithData='" + groupsSupportedWithData + '\'' +
+                ", purposeOfData='" + purposeOfData + '\'' +
+                ", targetAudience='" + targetAudience + '\'' +
+                ", dataReplicability='" + dataReplicability + '\'' +
+                ", preAnalysis='" + preAnalysis + '\'' +
+                ", dataType='" + dataType + '\'' +
+                ", dataAnalysis='" + dataAnalysis + '\'' +
+                ", resultValidation='" + resultValidation + '\'' +
+                ", frequency='" + frequency + '\'' +
+                ", publicSharingConsent='" + publicSharingConsent + '\'' +
+                ", frequentInformationUpdates='" + frequentInformationUpdates + '\'' +
+                ", webscrappingApproval='" + webscrappingApproval + '\'' +
+                ", dashboardUsage='" + dashboardUsage + '\'' +
+                ", linksToCollectedData='" + linksToCollectedData + '\'' +
+                ", dataCommunicatedInThePublicSpace='" + dataCommunicatedInThePublicSpace + '\'' +
+                ", communicationDetails='" + communicationDetails + '\'' +
+                ", moreDetailOnTheMethodology='" + moreDetailOnTheMethodology + '\'' +
+                ", indicatorImage='" + indicatorImage + '\'' +
+                ", methodology='" + methodology + '\'' +
+                '}';
     }
 }
